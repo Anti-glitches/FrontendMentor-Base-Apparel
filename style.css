@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+    --DesaturatedRed: hsl(0, 36%, 70%);
+    --SoftRed: hsl(0, 93%, 68%);
+    --DarkGrayishRed: hsl(0, 6%, 24%);
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--DesaturatedRed);
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+.header{
+    height: 85px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.header img{
+    height: auto;
+    width: 115px;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-imgs> img{
+    width: 100%;
+}
+
+.hero-imgs> .hero-img-mobile{
+    display: block;
+}
+
+.hero-imgs> .hero-img-desktop{
+    display: none;
+}
+
+
+
+.hero-content{
+    text-align: center;
+    padding: 30px;
+    /* font-size: 1.2rem;
+    letter-spacing: 4px; */
+}
+
+.hero-h1{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 13px;
+    color: var(--DarkGrayishRed);
+}
+
+.hero-h1 > span{
+    font-weight: 300;
+    color: var(--DesaturatedRed);
+    display: block;
+}
+
+.hero-para{
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.hero-email{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-input{
+    height: 45px;
+    width: 100%;
+    padding-right: 75px;
+    /* padding-right: 120px; */
+    padding-left: 25px;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: var(--DesaturatedRed);
+    border: 1px solid var(--DesaturatedRed);
+    background-color: inherit;
+}
+
+.hero-input::placeholder{
+    font-family: 'Josefin Sans', sans-serif; 
+    color: var(--DesaturatedRed);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.hero-input:focus{
+    outline: none;
+}
+
+.hero-button{
+    min-width: 75px;
+    margin-left: -74px;
+    height: 49px;
+    border-radius: 2rem;
+    border: none;
+    background-image: linear-gradient(135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    cursor: pointer;
+}
+
+.hero-button:active{
+    opacity: 0.8;
+}
+.hero-input-error{
+    position: absolute;
+    top: 12px;
+    right: 88px;
+    display: none;
+}
+
+.hero-email-message{
+    font-size: 14px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+@media (min-width: 992px) {
+    .header{
+        padding: 20px 30px;
+    }
+
+    .hero-imgs> .hero-img-desktop{
+        display: block;
+        margin-top: -125px;
+    }
+
+    .hero-content{
+        margin-top: 35px;
+    }
+}
+
+@media (min-width: 768px) and (max-width:992px){
+    .hero{
+        height: 85vh;
+    }
+
+    .hero-imgs{
+        align-self: center;
+    }
+
+    .hero-content{
+        align-self: center;
+    }
+}
+
+
+@media (min-width: 768px){
+    body{
+        background-image: url(images/bg-pattern-desktop.svg);
+        padding-left: 130px;
+    }
+
+    .hero{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: end;
+    }
+
+    .hero-imgs{
+        order: 2;
+        justify-self: end;
+    }
+
+    .hero-imgs> .hero-img-mobile{
+        display: none;
+    }
+    
+    .hero-imgs> .hero-img-desktop{
+        display: block;
+    }
+
+    .hero-content{
+        max-width: 370px;
+    }
+
+    .hero-h1{
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .hero-para{
+        text-align: left;
+    }
+}
+
+@media (min-width: 576px) and (max-width:768px){
+    .hero{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: end;
+        height: 80vh;
+    }
+
+    .hero-imgs{
+        order: 2;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .hero-imgs> .hero-img-mobile{
+        display: none;
+    }
+    
+    .hero-imgs> .hero-img-desktop{
+        display: block;
+    }
+
+    .hero-content{
+        max-width: 370px;
+        align-self: center;
+    }
+
+    .hero-h1{
+        text-align: left;
+    }
+
+    .hero-para{
+        text-align: left;
+    }
+}
